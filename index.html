@@ -9,38 +9,48 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/style.css" />
-    <title>Ai-Project</title>
+    <title>AI-Powered Gluten & Lactose-Free Recipes</title>
   </head>
   <body>
-    <header>
+    <header class="section-layout">
       <h1>Delicious Gluten & Lactose-Free Recipes</h1>
       <h3>
         Discover the first AI-powered recipe generator that creates tasty,
         gluten and lactose-free dishes – guilt-free indulgence made easy!
       </h3>
     </header>
-    <main id="form-container">
-      <form id="search" action="">
-        <label for="fname">Choose a recipe</label><br />
+
+    <main id="form-container" class="section-layout">
+      <form id="search" class="form-layout">
+        <label for="search-form" class="visually-hidden">Choose a recipe</label>
         <input
           type="text"
           id="search-form"
           name="search"
           placeholder="ie. tiramisu, pasta carbonara, ratatouille"
         />
-        <input id="submit-btn" type="submit" value="Submit" />
+        <button id="submit-btn" type="submit">Submit</button>
       </form>
-      <div class="form-answer"></div>
+      <div class="form-answer" id="form-answer">
+        <!-- Placeholder for dynamically generated recipe content -->
+      </div>
     </main>
-    <footer>
+
+    <footer class="section-layout">
       <p>
-        <small
-          >This AI project was coded by Marine Crouzet. Open source code on
-          <a href="https://github.com/MarineCrou/AI-Project">GitHub</a>. Hosted
-          on <a href="https://ai-project-mc.netlify.app/">Netlify</a>.</small
-        >
+        <small>
+          This AI project was coded by <strong>Marine Crouzet</strong>. Open
+          source code on
+          <a href="https://github.com/MarineCrou/AI-Project" target="_blank"
+            >GitHub</a
+          >. Hosted on
+          <a href="https://ai-project-mc.netlify.app/" target="_blank"
+            >Netlify</a
+          >.
+        </small>
       </p>
     </footer>
+
     <script src="./src/app.js"></script>
   </body>
 </html>
