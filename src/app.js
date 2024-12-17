@@ -33,6 +33,8 @@ Include clear instructions and measurements for the recipe.`;
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${API_KEY}`;
 
   axios.get(apiUrl).then(apiAnswer);
+  let answerPlaceholder = document.getElementById("form-answer");
+  answerPlaceholder.innerHTML = "We're getting your recipe! 🍔 🥗 🍱 🍰 ... ";
 };
 
 let searchInput = document.getElementById("submit-btn");
