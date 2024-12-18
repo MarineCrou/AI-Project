@@ -1,7 +1,14 @@
-// What I need to do ?
-// -> create API prompt
+// API KEY
+let API_KEY;
+import { API_KEY as LocalAPIKey } from "./config.js";
 
-// import { API_KEY } from "./config";
+if (process.env.NODE_ENV === "production") {
+  API_KEY = window.API_KEY;
+} else {
+  API_KEY = LocalAPIKey;
+}
+
+console.log("Using API_KEY:", API_KEY);
 
 const renderMarkdown = (markdown) => {
   console.log(markdown);
@@ -25,7 +32,7 @@ let getSearchValue = (e) => {
   console.log(inputValue);
 
   // -> Get the AI API link through Axios
-  let API_KEY = `tf486ac3343a3de0640fb9054f9boe8b`;
+  const API_KEY = process.env.API_KEY || window.API_KEY;
   let prompt = inputValue;
   let context = `"Provide a gluten-free and lactose-free version of the recipe requested by the user. Ensure that all ingredients are free from gluten and lactose, and suggest appropriate substitutions where necessary. The recipe must remain delicious, easy to follow, and true to the original dish’s flavors and textures. For example:
 If the user searches for 'tiramisu', replace gluten-containing ingredients like ladyfingers with gluten-free alternatives, and lactose-containing items like mascarpone with lactose-free substitutes.
